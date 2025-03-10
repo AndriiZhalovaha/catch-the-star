@@ -1,0 +1,151 @@
+/* Скидання стилів для браузера */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Налаштування основного тла та вирівнювання елементів по центру */
+body {
+    background-color: #000000;
+    font-family: 'Pixelify Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Контейнер для меню */
+#menu-container {
+    text-align: center;
+}
+
+/* Анімація тексту на стартовому екрані */
+.animated-text {
+    color: #ffffff;
+    font-size: 48px;
+    margin-bottom: 40px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Анімація кнопки на стартовому екрані */
+.animated-button {
+    padding: 10px 20px;
+    font-size: 24px;
+    font-family: 'Pixelify Sans', sans-serif;
+    background-color: #ff6600;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+.animated-button:hover {
+    background-color: #ff8533;
+}
+
+/* Анімації для тексту */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Зображення зірочки на екрані старту */
+#menu-star {
+    width: 100px;
+    height: 100px;
+    margin: 20px 0;
+}
+
+/* Контейнер гри */
+#game-container {
+    width: 800px;
+    height: 600px;
+    position: relative;
+    overflow: hidden; /* Обмеження області видимості */
+}
+
+/* Фон гри */
+#game-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/space.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+/* Гравець (корабель) */
+#player {
+    position: absolute;
+    width: 100px; /* Збільшення розміру корабля */
+    height: 100px;
+    background: url('images/ship.png') no-repeat center center;
+    background-size: cover;
+    bottom: 10px;
+    left: calc(50% - 40px); /* Центрування по горизонталі */
+}
+
+/* Зірочка */
+#star {
+    position: absolute;
+    width: 40px; /* Збільшення розміру зірочки */
+    height: 40px;
+    background: url('images/star.png') no-repeat center center;
+    background-size: cover;
+    top: 0;
+    left: calc(50% - 20px); /* Центрування по горизонталі */
+}
+
+/* Текст рахунку та таймера */
+.score-text, .timer-text {
+    position: absolute;
+    color: #ffffff;
+    font-size: 24px;
+    font-family: 'Pixelify Sans', sans-serif;
+}
+
+.score-text { left: 10px; top: 10px; }
+.timer-text { right: 10px; top: 10px; }
+
+/* Контейнер для життів */
+#lives-container {
+    position: absolute;
+    left: 150px;
+    top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Життя (сердечка) */
+#lives-container .heart {
+    width: 30px;
+    height: 30px;
+    background: url('images/heart.png') no-repeat center center;
+    background-size: cover;
+}
+
+/* Повідомлення про кінець гри */
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: #ff0000;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
